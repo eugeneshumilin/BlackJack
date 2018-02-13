@@ -24,7 +24,7 @@ class User
   end
 
   def receives_cards(cards)
-    @cards + cards if can_take_cards?
+    @cards.concat(cards) if can_take_cards?
   end
 
   def show_face_cards
@@ -51,13 +51,13 @@ class User
     take_bank(bank)
   end
 
-  protected
-
-  attr_writer :skipped_move, :took_a_card, :opened_cards
-
   def can_take_cards?
     @cards.size < MAX_COUNT_OF_CARDS
   end
+
+  protected
+
+  attr_writer :skipped_move, :took_a_card, :opened_cards
 
   def skip_move
     puts "#{name} пропускает ход."
