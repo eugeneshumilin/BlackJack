@@ -10,7 +10,7 @@ class Dealer < User
     if can_skip?(hand.score(@cards))
       skip_move
     elsif can_take_card?
-      recieves_one_card(hand.one_card)
+      recieves_one_card(hand.deal_one_card)
     else
       open_cards
     end

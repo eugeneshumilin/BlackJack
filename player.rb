@@ -3,7 +3,7 @@ class Player < User
     if can_skip?(choice)
       skip_move
     elsif can_take_card?(choice)
-      recieves_one_card(hand.one_card)
+      recieves_one_card(hand.deal_one_card)
     elsif can_open_cards?(choice)
       open_cards
     end
