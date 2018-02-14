@@ -14,12 +14,12 @@ class Game
 
   private
 
-  attr_accessor :game_over, :bank 
+  attr_accessor :game_over, :bank
 
   def game_process(choice)
-    if choice == 'n'
+    if choice == GameHelperModule::CHOICES[:new]
       start_game
-    elsif choice == 'q'
+    elsif choice == GameHelperModule::CHOICES[:quit]
       exit_game
     else
       puts 'Некорректный ввод.'

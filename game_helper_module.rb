@@ -1,4 +1,6 @@
 module GameHelperModule
+  CHOICES = { quit: 'q', skip: 's', take: 't', open: 'o', new: 'n' }.freeze
+
   private
 
   def player_name
@@ -14,7 +16,7 @@ module GameHelperModule
   def command(user)
     ask_user_choice(user)
     choice = gets.strip
-    exit_game if choice == 'q'
+    exit_game if choice == GameHelperModule::CHOICES[:quit]
     raise unless %w[s t o].include?(choice)
     choice
   rescue RuntimeError

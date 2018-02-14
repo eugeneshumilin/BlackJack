@@ -8,10 +8,7 @@ class User
   def initialize(name)
     @name = name
     @bankroll = START_BANKROLL
-    @cards = []
-    @skipped_move = false
-    @took_a_card = false
-    @opened_cards = false
+    clear_data
   end
 
   def place_bet

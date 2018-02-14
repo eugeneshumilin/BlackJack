@@ -12,14 +12,14 @@ class Player < User
   private
 
   def can_skip?(choice)
-    choice == 's' && !@skipped_move
+    choice == GameHelperModule::CHOICES[:skip] && !@skipped_move
   end
 
   def can_take_card?(choice)
-    choice == 't' && !@took_a_card
+    choice == GameHelperModule::CHOICES[:take] && !@took_a_card
   end
 
   def can_open_cards?(choise)
-    choise == 'o'
+    choise == GameHelperModule::CHOICES[:open]
   end
 end
