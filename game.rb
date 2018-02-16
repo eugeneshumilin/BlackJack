@@ -1,5 +1,6 @@
 class Game
   include GameHelperModule
+  include UserInterface
 
   def initialize
     greeting
